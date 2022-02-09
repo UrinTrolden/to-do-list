@@ -1,3 +1,15 @@
+@font-face {
+    font-family: 'sticky';
+    src: url('./fonts/Sticky\ Notes.ttf');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+body {
+    background-color: rgb(127, 196, 240);
+}
+
 #toDoForm {
     display: none;
     background-color: rgba(37, 37, 37, 0.9);
@@ -15,4 +27,34 @@
 
 #toDoForm.show {
     display: flex;
+}
+
+.todocontainer {
+    --n: 6; /* The maximum number of columns */
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(max(200px, 100%/var(--n)), 1fr));
+    gap: 10px;
+    padding: 2px 16px;
+    font-family: 'sticky';
+}
+
+.todocard {
+    min-height: 12rem;
+    max-height: fit-content;
+    min-width: 8rem;
+    border: 2px solid black;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    border-radius: 5px;
+}
+
+.todocard .title {
+    display: flex;
+    justify-content: center;
+}
+
+.todocard .date {
+    display: flex;
+    justify-content: center;
+    font-size: 1.5em;
 }
